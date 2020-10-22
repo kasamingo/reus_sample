@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(reus.jp)(:80)? [NC]
+RewriteRule ^(.*) http://www.reus.jp/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ http://www.reus.jp/$1 [R=301,L]
+
+ErrorDocument 404 /404.html
